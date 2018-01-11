@@ -1,0 +1,58 @@
+
+Simple Fun #4: Phone Call
+https://www.codewars.com/kata/588425ee4e8efb583d000088
+Task
+
+Some phone usage rate may be described as follows:
+
+first minute of a call costs min1 cents,
+
+each minute from the 2nd up to 10th (inclusive) costs min2_10 cents
+
+each minute after 10th costs min11 cents.
+
+You have s cents on your account before the call. What is the duration of the longest call (in minutes rounded down to the nearest integer) you can have?
+Example
+
+For min1 = 3, min2_10 = 1, min11 = 2 and s = 20, the output should be
+
+phoneCall(min1, min2_10, min11, s) === 14
+
+my solution(PHP):
+
+function phone_call(int $min1, int $min2_10, int $min11, int $s): int {
+
+// Coding and coding ... 
+$s=$s-$min1;
+if($s>=0)
+{
+$count=1;
+}
+else
+{
+$count=0;
+}
+
+if($s>0)
+{
+$k=$s/$min2_10;
+if($k<=9)
+{
+$s=$s-($k*$min2_10);
+$count+=$k;
+}
+else
+{
+$s=$s-(9*$min2_10);
+$count+=9;
+}
+}
+if($s>0)
+{
+$k=$s/$min11;
+$count=$count+$k;
+}
+return($count);
+
+}
+
