@@ -1,0 +1,25 @@
+
+Very simple, given a number, find its opposite.
+https://www.codewars.com/kata/56dec885c54a926dcd001095
+
+PHP:
+
+function opposite($n) {
+ 
+ return(($n<0)?abs($n):-abs($n));
+}
+
+  
+function opposite($n) {
+  // Your code here
+  return( $n <= 0 ? abs($n) : -$n);
+  
+}
+
+ 
+C:
+
+float opposite(float num) {
+  //processing...
+  return(0-num);
+}
